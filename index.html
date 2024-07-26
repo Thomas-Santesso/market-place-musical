@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace de Beats - Asfalto Style</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#beats"><i class="fas fa-music"></i> Beats</a></li>
+                <li><a href="#sample-packs"><i class="fas fa-box-open"></i> Sample Packs</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Bem-vindo ao Marketplace de Beats</h1>
+        <p>Explore e compre beats de alta qualidade.</p>
+    </section>
+
+    <section id="beats">
+        <h2>Beats Disponíveis</h2>
+        <div class="beat">
+            <h3>Beat 1</h3>
+            <audio controls>
+                <source src="beat1.mp3" type="audio/mp3">
+                <source src="beat1.wav" type="audio/wav">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <button onclick="comprarBeat('Beat 1')">Comprar</button>
+        </div>
+        <!-- Mais beats -->
+    </section>
+
+    <section id="sample-packs">
+        <h2>Sample Packs</h2>
+        <p>Leve suas produções a outro nível com nossos sample packs exclusivos.</p>
+        <!-- Lista de sample packs -->
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form action="https://api.whatsapp.com/send?phone=SEU_NUMERO&text=Olá, estou interessado no beat [NOME_DO_BEAT] e no formato [FORMATO]" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Marketplace de Beats</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Escolha o formato de áudio</h2>
+            <button onclick="finalizarCompra('mp3', 'whatsapp')">WhatsApp - MP3</button>
+            <button onclick="finalizarCompra('wav', 'whatsapp')">WhatsApp - WAV</button>
+            <button onclick="finalizarCompra('mp3', 'instagram')">Instagram - MP3</button>
+            <button onclick="finalizarCompra('wav', 'instagram')">Instagram - WAV</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
